@@ -17,19 +17,41 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body>
-
-  <h1>IP Address Tracker</h1>
-  <form id="geo-form">
-    <input type="text" placeholder="Search for any IP address or domain">
-    <input type="submit" />
-  </form>
-
-  <div class="result-grid">
-    <div id="ip-result">IP Address</div>
-    <div id="location-result">Location</div>
-    <div id="timezone-result">Timezone</div>
-    <div id="isp-result">ISP</div>
+  <div class="container">
+    <header>
+        <h1>IP Address Tracker</h1>
+        <form id="geo-form">
+          <input type="text" placeholder="Search for any IP address or domain">
+          <input type="submit" />
+        </form>
+        <div class="result-grid">
+            <div class="result-col ip">
+              <h3>
+                IP Address
+              </h3>
+              <h2>
+                192.212.174.101
+              </h2>
+            </div>
+            <div class="result-col location">
+              <h3>Location</h3>
+              <h2>Brooklyn, NY 100001 gdfgdfsgfdgsdfhnfghfghfghfdhgfhfgdhfhdf </h2>
+            </div>
+            <div class="result-col timezone"><h3>Timezone</h3>
+            <h2>UTC-05:00</h2>
+            </div>
+            <div class="result-col isp"><h3>ISP</h3>
+            <h2>SpaceX Starlink</h2>
+            </div>
+        </div>
+      </header>
+    <main>
+      <div class="map"></div>
+    </main>
   </div>
+
+
+
 
 
     UTC <!-- add offset value dynamically using the API -->

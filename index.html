@@ -3,63 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <!-- Custom font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./script.js" defer></script>
   <title>Frontend Mentor | IP Address Tracker</title>
-  <script src="scripts/script.js" defer></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+  </style>
 </head>
 <body>
   <div class="container">
-    <header>
-        <h1>IP Address Tracker</h1>
-        <form id="geo-form">
-          <input type="text" placeholder="Search for any IP address or domain">
-          <input type="submit" />
+    <div class="input-wrapper">
+        <h1>IP Address tracker</h1>
+        <form>
+          <input type="text" placeholder="Search for any IP address or domain"/>
+          <button type="submit"><img src="./images/icon-arrow.svg" /></button>
         </form>
-        <div class="result-grid">
-            <div class="result-col ip">
-              <h3>
-                IP Address
-              </h3>
-              <h2>
-                192.212.174.101
-              </h2>
-            </div>
-            <div class="result-col location">
-              <h3>Location</h3>
-              <h2>Brooklyn, NY 100001 gdfgdfsgfdgsdfhnfghfghfghfdhgfhfgdhfhdf </h2>
-            </div>
-            <div class="result-col timezone"><h3>Timezone</h3>
-            <h2>UTC-05:00</h2>
-            </div>
-            <div class="result-col isp"><h3>ISP</h3>
-            <h2>SpaceX Starlink</h2>
-            </div>
-        </div>
-      </header>
-    <main>
-      <div class="map"></div>
-    </main>
-  </div>
+        <span class="error__text"></span>
+    </div>
 
-
-
-
-
-    UTC <!-- add offset value dynamically using the API -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="result--grid--wrapper">
+                    <div class="result-grid">
+                    <div class="result-col ip">
+                      <h3>
+                        IP Address
+                      </h3>
+                      <span class="col__datafield" id="ip__data">
+                        
+                      </span>
+                    </div>
+                    <div class="result-col location">
+                      <h3>Location</h3>
+                      <span class="col__datafield" id="location__data"></span>
+                    </div>
+                    <div class="result-col timezone">
+                      <h3>Timezone</h3>
+                      <span class="col__datafield" id="timezone__data"></span>
+                    </div>
+                    <div class="result-col isp">
+                      <h3>ISP</h3>
+                      <span class="col__datafield" id="isp__data"></span>
+                    </div>
+                  </div>
+    </div>
+    <div class="map" id="map"></div>
   </div>
 </body>
 </html>

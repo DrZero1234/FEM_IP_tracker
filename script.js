@@ -16,14 +16,21 @@ const EMAIL_REGEX = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
 const IP_REGEX = /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/;
 const DOMAIN_REGEX = /^(?=.{1,253}\.?$)(?:(?!-|[^.]+_)[A-Za-z0-9-_]{1,63}(?<!-)(?:\.|$)){2,}$/
 
+<<<<<<< HEAD
 /*
+=======
+
+>>>>>>> 8854cf4185e5af1e5e54f304c69b720f819ba2a9
 async function getApiKey (){
   const res = await fetch("./config.json");
   const json = await res.json();
 
   return json.apiKey
 };
+<<<<<<< HEAD
 */
+=======
+>>>>>>> 8854cf4185e5af1e5e54f304c69b720f819ba2a9
 
 function getParameter(input){
   switch(true){
@@ -41,7 +48,11 @@ function getParameter(input){
 
 
 async function generateMap(val){
+<<<<<<< HEAD
     const apiKey = process.env.GEO_API_KEY
+=======
+    const apiKey = await getApiKey()
+>>>>>>> 8854cf4185e5af1e5e54f304c69b720f819ba2a9
     if (!getParameter(val)){
       DOM_error_text.textContent = `Your input format is incorrect`
       return 

@@ -96,7 +96,7 @@ body {
 
 .input-wrapper{
     display: grid;
-    background-image: url("./images/pattern-bg-desktop.png");
+    background-image: url("../images/pattern-bg-desktop.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -229,7 +229,7 @@ form{
 
 @media (max-width: 375px){
     .input-wrapper{
-        background-image: url("./images//pattern-bg-mobile.png");
+        background-image: url("../images//pattern-bg-mobile.png");
     }
 
     .result-grid{

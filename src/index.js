@@ -1,5 +1,9 @@
 
+import "./style.css"
+import locationIcon from "./icon-location.svg"
+
 var map;
+
 
 
 const DOM_error_text = document.querySelector(".error__text");
@@ -41,7 +45,7 @@ function getParameter(input){
 
 
 async function generateMap(val){
-    const apiKey = process.env.GEO_API_KEY
+    const apiKey = process.env.DOTENV.GEO_API;
     if (!getParameter(val)){
       DOM_error_text.textContent = `Your input format is incorrect`
       return 
@@ -65,7 +69,7 @@ async function generateMap(val){
         map = L.map(DOM_map,{scrollWheelZoom:false}).setView([lat,lng],18);
 
         var greenIcon = L.icon({
-        iconUrl: "./images/icon-location.svg",
+        iconUrl: locationIcon,
 
         iconSize:     [60, 80], 
         shadowSize:   [50, 64], 

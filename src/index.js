@@ -4,7 +4,7 @@ import locationIcon from "./icon-location.svg"
 
 var map;
 
-
+console.log(process.env.GEO_API);
 
 const DOM_error_text = document.querySelector(".error__text");
 const DOM_form = document.querySelector("form");
@@ -45,7 +45,7 @@ function getParameter(input){
 
 
 async function generateMap(val){
-    const apiKey = process.env.DOTENV.GEO_API;
+    const apiKey = process.env.GEO_API;
     if (!getParameter(val)){
       DOM_error_text.textContent = `Your input format is incorrect`
       return 

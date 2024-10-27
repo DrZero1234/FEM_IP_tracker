@@ -4,7 +4,6 @@ import locationIcon from "./icon-location.svg"
 
 var map;
 
-console.log(process.env.GEO_API);
 
 const DOM_error_text = document.querySelector(".error__text");
 const DOM_form = document.querySelector("form");
@@ -50,7 +49,7 @@ async function generateMap(val){
       DOM_error_text.textContent = `Your input format is incorrect`
       return 
     }
-    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&${getParameter(val)}=${val}`
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey.slice(1,-2)}&${getParameter(val)}=${val}`
     try{
         const res = await fetch(url)
         if (!res.ok){

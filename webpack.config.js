@@ -2,9 +2,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-const Dotenv = require("dotenv-webpack")
+const Dotenv = require("dotenv").config({
+  path: path.join(__dirname, ".env")
+});
 
-module.exports = {
+
+module.exports =  {
   mode: "development",
   entry: "./src/index.js",
   output: {
@@ -17,10 +20,14 @@ module.exports = {
     watchFiles: ["./src/index.html"],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        GEO_API: JSON.stringify(process.env.GEO_API)
+      }
+    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv(),
   ],
   module: {
     rules: [
@@ -37,6 +44,5 @@ module.exports = {
         type: "asset/resource",
       },
     ],
-  },
-
+  }
 };
